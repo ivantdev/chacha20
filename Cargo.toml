@@ -1,5 +1,5 @@
 [package]
-name = "mychacha20"
+name = "chacha20imp"
 version = "0.1.0"
 edition = "2021"
 
