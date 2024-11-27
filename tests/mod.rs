@@ -258,39 +258,6 @@ mod tests {
             const KEY: [u8; 32] = hex!(
                 "
                     00000000000000000000000000000000
-                    00000000000000000000000000000000
-                    "
-            );
-
-            const NONCE: [u8; 12] = hex!(
-                "
-                    000000000000000000000000
-                    "
-            );
-
-            const PLAINTEXT: [u8; 64] = [0u8; 64];
-
-            const CIPHERTEXT: [u8; 64] = hex!(
-                "
-                    76b8e0ada0f13d90405d6ae55386bd28
-                    bdd219b8a08ded1aa836efcc8b770dc7
-                    da41597c5157488d7724e03fb8d84a37
-                    6a43b8f41518a11cc387b669b2ee6586
-                    "
-            );
-
-            let mut buf = PLAINTEXT;
-            let mut cipher = ChaCha20Impl::new(&KEY, &NONCE);
-
-            cipher.apply_keystream(&mut buf);
-            assert_eq!(&buf[..], &CIPHERTEXT[..]);
-        }
-
-        #[test]
-        fn cipher_test_vector_1() {
-            const KEY: [u8; 32] = hex!(
-                "
-                    00000000000000000000000000000000
                     00000000000000000000000000000001
                     "
             );
@@ -368,7 +335,7 @@ mod tests {
         }
 
         #[test]
-        fn cipher_test_vector_2() {
+        fn cipher_test_vector_1() {
             const KEY: [u8; 32] = hex!(
                 "
                     1c9240a5eb55d38af333888604f6b5f0
